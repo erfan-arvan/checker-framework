@@ -402,6 +402,10 @@ public class WholeProgramInferenceImplementation<T> implements WholeProgramInfer
       return;
     }
 
+    //disable contract inference to prevent WPI infinite loop
+    if (true)
+      return;
+
     if (store == null) {
       throw new BugInCF(
           "updateContracts(%s, %s, null) for %s",
